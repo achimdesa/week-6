@@ -1,1 +1,1 @@
-This is scripts for project modularization.
+These are a python scripts for project modularization.

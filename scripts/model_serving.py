@@ -17,7 +17,7 @@ with open("../data/models/logistic_regression_model.pkl", "rb") as f:
 with open("../data/models/random_forest_model.pkl", "rb") as f:
     random_forest_model = pickle.load(f)
 
-    
+
 # Define a function to apply WoE
 
 def apply_woe(data):
@@ -69,3 +69,15 @@ async def predict_random_forest(input_data: PredictionInput):
     data_woe = apply_woe(data)  # Apply WoE here
     prediction = random_forest_model.predict(data_woe)
     return {"prediction": int(prediction[0])}
+"""
+To run the app:
+1: Navigate to the scripts/ directory:
+cd scripts
+
+2: Run the FastAPI server using Uvicorn:
+Run the below command:
+uvicorn model_serving:app --reload
+
+The API will be accessible at http://127.0.0.1:8000.
+
+"""

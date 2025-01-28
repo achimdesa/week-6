@@ -1,9 +1,12 @@
+# import important libraries
+
 from fastapi import FastAPI
 import pickle
 import pandas as pd
 from pydantic import BaseModel
 import scorecardpy as sc  # Make sure this is imported
 import numpy as np
+
 # Initialize FastAPI app
 app = FastAPI()
 
@@ -14,8 +17,8 @@ with open("../data/models/logistic_regression_model.pkl", "rb") as f:
 with open("../data/models/random_forest_model.pkl", "rb") as f:
     random_forest_model = pickle.load(f)
 
+    
 # Define a function to apply WoE
-
 
 def apply_woe(data):
     # Load WoE bins from the saved model
